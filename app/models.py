@@ -1,6 +1,6 @@
 # File for models/classes
-from . import db
-
+from . import create_app
+# from app.models import User,Role,Review
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
