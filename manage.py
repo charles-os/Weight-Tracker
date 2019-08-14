@@ -1,7 +1,7 @@
 # Import db from app factory
-from app import create_app
+# from app import create_app
 from flask_script import Manager,Server
-from app import create_app,db
+from app import create_app
 # Connect to models
 from app.models import User,Role,Review
 # Set up migrations
@@ -32,9 +32,9 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 
-# @manager.shell
-# def make_shell_context():
-#     return dict( app=app, db=db, User=User, Review=Review, Role=Role)
+@manager.shell
+def make_shell_context():
+    return dict( app=app, db=db, User=User, Review=Review, Role=Role)
 
 
 if __name__ == '__main__':
