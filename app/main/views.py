@@ -1,6 +1,8 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
 from ..models import Reviews, User
+from .forms import ReviewForm,UpdateProfile
+from .. import db
 # Views
 @main.route('/')
 def index():
